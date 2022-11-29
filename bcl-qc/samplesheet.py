@@ -58,7 +58,7 @@ def beaker_to_samplesheet(beaker_df: pd.DataFrame):
     samplesheet_df = pd.DataFrame(columns=samplesheet_cols)
     samplesheet_df['sample_id'] = beaker_df['sample_id']
     samplesheet_df['index1', 'index2'] = get_indices_pairs(beaker_df[['plate_id', 'sample_id']])
-    samplesheet = create_samplesheet_header() + samplesheet_df
+    samplesheet = create_samplesheet_header() + samplesheet_df.to_csv
     return samplesheet
 
 def beaker_to_minimal_input(beaker_df: pd.DataFrame):
